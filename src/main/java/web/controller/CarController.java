@@ -12,12 +12,11 @@ import java.util.Optional;
 
 @Controller
 public class CarController {
-    @Qualifier
+    @Autowired
     private CarService carService;
 
     @GetMapping("/cars")
-    @ResponseBody
-    public String showCars(@RequestParam(value = "count") Optional<Integer> count, Model model) {
+    public String showCars(@RequestParam(required = false, value = "count") Optional<Integer> count, Model model) {
         model.addAttribute("cars", carService.getCars(count.orElse(0)));
         return "cars";
     }

@@ -14,7 +14,6 @@ import java.util.List;
 public class HelloController {
 
     @GetMapping(value = "/hello")
-    @ResponseBody
     public String printWelcome(ModelMap model) {
         model.addAttribute("messages", "Hello World!");
         return "index";
