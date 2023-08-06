@@ -2,9 +2,9 @@ package web.model;
 
 public class Car {
     public String model;
-    private String color;
-    private int year;
-    private double price;
+    private final String color;
+    private final int year;
+    private final double price;
 
     public Car(String model, String color, int year, double price) {
         this.model = model;
